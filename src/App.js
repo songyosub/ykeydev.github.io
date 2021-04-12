@@ -1,12 +1,12 @@
 import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Header from "./Header"
+import Layout from "./Layout";
 
 function App() {
   return (
     <div className="App">
       <CssBaseline />
-      <Header/>
+      <Layout/>
     </div>
   );
 }

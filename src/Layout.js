@@ -12,20 +12,21 @@ import {
 import React, { useState, useEffect } from "react";
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link as RouterLink } from "react-router-dom";
+import Home from "./Home";
 import clsx from 'clsx';
 
 const headersData = [
   {
-    label: "Menu1",
-    href: "/Menu1",
+    label: "Home",
+    href: "/",
   },
   {
-    label: "Menu2",
-    href: "/Menu2",
+    label: "About",
+    href: "/about",
   },
   {
-    label: "Menu3",
-    href: "/Menu3",
+    label: "Contact",
+    href: "/contact",
   }
 ];
 
@@ -42,23 +43,24 @@ const useStyles = makeStyles((theme) =>({
         }),
       },
       header: {
-        backgroundColor: "#696969",
-        paddingRight: "79px",
-        paddingLeft: "118px",
+        backgroundColor: "#FFCC33",
+        paddingRight: "50px",
+        paddingLeft: "20px",
         "@media (max-width: 900px)": {
-          paddingLeft: 0,
+          /*paddingLeft: 0,*/
         },
       },
       logo: {
         fontFamily: "Work Sans, sans-serif",
         fontWeight: 1000,
-        color: "#FFFFFF",
+        color: "#663300",
         textAlign: "left",
       },
       menuButton: {
         fontFamily: "Open Sans, sans-serif",
         fontWeight: 700,
         size: "18px",
+        color: "#663300",
         marginLeft: "38px",
       },
       toolbar: {
@@ -72,7 +74,7 @@ const useStyles = makeStyles((theme) =>({
 )
 
 function Header() {
-    const classes = useStyles();
+   // const classes = useStyles();
     const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
 
     const [open, setOpen] = React.useState(false);
@@ -115,13 +117,13 @@ function Header() {
         <IconButton
           {...{
             edge: "start",
-            color: "inherit",
+            color:  "#663300",
             "aria-label": "menu",
             "aria-haspopup": "true",
             onClick: handleDrawerOpen,
           }}
         >
-          <MenuIcon />
+        <MenuIcon />
         </IconButton>
 
         <Drawer
@@ -203,11 +205,15 @@ function Header() {
     //   </div>
     // );
     return (
-      <header>
-      <AppBar className={header}>
+      <>
+        <AppBar className={header}>
         {mobileView ? displayMobile() : displayDesktop()}
-      </AppBar>
-    </header>
+       </AppBar>
+       <body>
+         <Home/>
+       </body>
+
+    </>
     );
 
   }
