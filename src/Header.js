@@ -7,6 +7,7 @@ import {
     makeStyles
   } from "@material-ui/core";
   import { Link as RouterLink } from "react-router-dom";
+  import imgfile from './img/smi_logo.png'
 
 const Header = () => {
     const menuList = [
@@ -31,17 +32,34 @@ const Header = () => {
       const useStyles = makeStyles((theme) =>({
         appBar: {
           position: 'fixed',
-            zIndex: theme.zIndex.drawer + 1,
+          zIndex: theme.zIndex.drawer + 1,
+          background:'white',
+          height: '75px'
         },
+        logo:{
+          height:'50px',
+          marginLeft:'40px',
+        },
+        logo_div:{
+          flexGrow: 1
+        },
+        button_div:{
+          marginRight:'40px'
+        }
       })
     )
     const classes = useStyles();
     
 
     const mainLogo = (
+      /*
         <Typography variant="h6" component="h1">
             세모인
         </Typography>
+        */
+       <div className={classes.logo_div}>
+         <img src={imgfile} className = {classes.logo}/>
+       </div>
       );
 
     const getMenuButtons = () => {
@@ -50,7 +68,7 @@ const Header = () => {
           <Button
               {...{
               key: label,
-              color: "inherit",
+              color: "solid black",
               to: href,
               component: RouterLink
               }}
@@ -63,10 +81,10 @@ const Header = () => {
 
     return(
         <>
-            <AppBar position="fixed" className = {classes.appBar}>
+            <AppBar  position="fixed" className = {classes.appBar}>
                 <Toolbar>
                     {mainLogo}
-                    <div>{getMenuButtons()}</div>
+                    <div className={classes.button_div}>{getMenuButtons()}</div>
                 </Toolbar>
             </AppBar>
       </>

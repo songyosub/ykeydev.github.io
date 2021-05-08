@@ -32,6 +32,9 @@ const Lately = () => {
         drawerContainer: {
             overflow: 'auto',   
         },
+        appBar: {
+          height: '75px'
+        },
       })
     );
     const classes = useStyles();
@@ -45,7 +48,7 @@ const Lately = () => {
             paper: classes.drawerPaper,
             }}
         >
-        <Toolbar />
+        <Toolbar className={classes.appBar}/>
         <div className={classes.drawerContainer}>
              <Typography>
               앱
@@ -71,7 +74,7 @@ const Lately = () => {
         </div>
       </Drawer>
       <main>
-        <Toolbar />
+       <Toolbar className={classes.appBar}/>
         <Typography paragraph>
                 Lately - Home
         </Typography>
