@@ -1,12 +1,6 @@
 import React from 'react';
 import {makeStyles,
-        Drawer ,
         Typography,
-        List,
-        Divider,
-        ListItem,
-        ListItemIcon,
-        ListItemText,
         Toolbar
     } from '@material-ui/core'
 import Menubar from './Menubar'
@@ -15,7 +9,7 @@ const Lately = () => {
     const drawerWidth = 240;
     const useStyles = makeStyles((theme) =>({
         lately: {
-            marginTop:'500px',
+            marginTop:'100px',
             width: '100%',
             textAlign: 'center',
         },
@@ -32,50 +26,17 @@ const Lately = () => {
         drawerContainer: {
             overflow: 'auto',   
         },
-        appBar: {
-          height: '75px'
-        },
       })
     );
     const classes = useStyles();
 
     return(
+
         <div className = {classes.container}>
-        <Drawer
-            className={classes.drawer}
-            variant="permanent"
-            classes={{
-            paper: classes.drawerPaper,
-            }}
-        >
-        <Toolbar className={classes.appBar}/>
-        <div className={classes.drawerContainer}>
-             <Typography>
-              앱
-            </Typography>
-          <List>
-            {['Lifecyle', 'Entertainment', 'Finance'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-          <Typography>
-              화면
-            </Typography>
-            {['Splash', 'Micro Interaction', 'On boarding', 'Sign in / Log in'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </div>
-      </Drawer>
+        <Menubar/>
       <main>
-       <Toolbar className={classes.appBar}/>
-        <Typography paragraph>
+       <Toolbar/>
+        <Typography className = {classes.lately}>
                 Lately - Home
         </Typography>
       </main>

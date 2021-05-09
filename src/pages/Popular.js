@@ -15,9 +15,12 @@ const Popular = () => {
     const { popular } = useStyles();
 
     return(
-        <Typography className = {popular}>
-            Popular
-        </Typography>
+        <div>
+            <Menubar/>
+            <Typography className = {popular}>
+                Popular
+            </Typography>
+        </div>
     )
 };
 

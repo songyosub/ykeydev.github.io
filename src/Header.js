@@ -34,10 +34,11 @@ const Header = () => {
           position: 'fixed',
           zIndex: theme.zIndex.drawer + 1,
           background:'white',
-          height: '75px'
+          boxShadow:'none'
         },
         logo:{
           height:'50px',
+          marginTop:'10px',
           marginLeft:'40px',
         },
         logo_div:{
@@ -68,7 +69,7 @@ const Header = () => {
           <Button
               {...{
               key: label,
-              color: "solid black",
+              color: "primary",
               to: href,
               component: RouterLink
               }}
