@@ -7,7 +7,7 @@ import {
     makeStyles
   } from "@material-ui/core";
   import { Link as RouterLink } from "react-router-dom";
-  import imgfile from './img/smi_logo.png'
+  import logo from './img/logo.svg'
 
 const Header = () => {
     const menuList = [
@@ -58,7 +58,7 @@ const Header = () => {
         </Typography>
         */
        <div className={classes.logo_div}>
-         <img src={imgfile} className = {classes.logo}/>
+         <img src={logo} className = {classes.logo}/>
        </div>
       );
 
