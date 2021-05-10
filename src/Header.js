@@ -26,7 +26,11 @@ const Header = () => {
         {
             label: "의견/제보",
             href: "/report",
-        }
+        },
+        {
+          label: "My",
+          href: "/my",
+      }
       ];
 
       const useStyles = makeStyles((theme) =>({
@@ -34,18 +38,21 @@ const Header = () => {
           position: 'fixed',
           zIndex: theme.zIndex.drawer + 1,
           background:'white',
-          boxShadow:'none'
+          boxShadow:'none',
         },
         logo:{
-          height:'50px',
-          marginTop:'10px',
-          marginLeft:'40px',
+          height:'38px',
+          marginTop:'18px',
+          marginLeft:'50px',
         },
         logo_div:{
           flexGrow: 1
         },
         button_div:{
-          marginRight:'40px'
+          marginRight:'60px'
+        },
+        buttons:{
+          fontWeight:'bold'
         }
       })
     )
@@ -66,7 +73,8 @@ const Header = () => {
     const getMenuButtons = () => {
       return menuList.map(({ label, href }) => {
           return (
-          <Button
+          <Button 
+              className={classes.buttons}
               {...{
               key: label,
               color: "primary",

@@ -19,34 +19,36 @@ const Menubar = () => {
         drawer: {
             width: drawerWidth,
             flexShrink: 0,
-            borderRight: 0
           },
         drawerPaper: {
             width: drawerWidth,
+            borderRight:0,
         },
         drawerContainer: {
-            marginTop:'20px',
+            marginTop:'30px',
             overflow: 'auto',   
         },
-        listItems:{
+        listItemText:{
             paddingLeft:'71px',
-
         },
         listTitle:{
             marginLeft:'85px',
             fontSize:'1.25rem',
             fontWeight:'bold'
         },
+        listItem:{
+            paddingBottom:'4px',
+            paddingTop:'4px'
+        },
         listText:{
-            fontSize:'1.rem',
-            fontStyle:'bold'
+            fontSize:'1 rem',
         },
       })
     );
     const classes = useStyles();
 
     return(
-        <Drawer
+    <Drawer
             className={classes.drawer}
             variant="permanent"
             classes={{
@@ -60,8 +62,8 @@ const Menubar = () => {
             </Typography>
         <List>
             {['Lifecyle', 'Entertainment', 'Finance'].map((text, index) => (
-            <ListItem button key={text} >
-                <ListItemText primary={text} classes={{primary:classes.listText}} className={classes.listItems} />
+            <ListItem button key={text} className={classes.listItem}>
+                <ListItemText primary={text} classes={{primary:classes.listText}} className={classes.listItemText} />
             </ListItem>
             ))}
         </List>
@@ -71,8 +73,8 @@ const Menubar = () => {
                 화면
             </Typography >
                 {['Splash', 'Micro Interaction', 'On boarding', 'Sign in / Log in'].map((text, index) => (
-                <ListItem button key={text}>
-                    <ListItemText primary={text} classes={{primary:classes.listText}} className={classes.listItems} />
+                <ListItem button key={text} className={classes.listItem}>
+                    <ListItemText primary={text} classes={{primary:classes.listText}} className={classes.listItemText} />
                 </ListItem>
                 ))}
         </List>

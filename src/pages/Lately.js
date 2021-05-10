@@ -1,7 +1,9 @@
 import React from 'react';
 import {makeStyles,
         Typography,
-        Toolbar
+        Toolbar,
+        Grid,
+        Paper,
     } from '@material-ui/core'
 import Menubar from './Menubar'
 
@@ -9,37 +11,53 @@ const Lately = () => {
     const drawerWidth = 240;
     const useStyles = makeStyles((theme) =>({
         lately: {
-            marginTop:'100px',
             width: '100%',
-            textAlign: 'center',
+            textAlign: 'left',
+            marginLeft:'20px',
+            marginTop:'28px',
+            marginBottom:'30px',
+            fontSize:'1.7rem',
+            fontWeight:'bold'
         },
         container:{
-            display:'flex'
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
         },
-        drawer: {
-            width: drawerWidth,
-            flexShrink: 0,
-          },
+       
         drawerPaper: {
             width: drawerWidth,
         },
         drawerContainer: {
-            overflow: 'auto',   
+            display:'block'
         },
+        paper: {
+            margin: 'auto',
+            height:'420px',
+            width:'200px',
+            borderRadius: 25
+          },
       })
     );
     const classes = useStyles();
 
     return(
+        <div className={classes}>
+        <Menubar/>  
+        
+        <main className={classes.container}>
+        <Toolbar/>
+            <Typography className = {classes.lately}>
+                   최근
+            </Typography>
+            <Grid container spacing={1}>
+                    <Paper elevation={3} className={classes.paper}></Paper>
+                    <Paper elevation={3} className={classes.paper}></Paper>
+                    <Paper elevation={3} className={classes.paper}></Paper>
+                    <Paper elevation={3} className={classes.paper}></Paper>
+                    <Paper elevation={3} className={classes.paper}></Paper>
+            </Grid>
+        </main>
 
-        <div className = {classes.container}>
-        <Menubar/>
-      <main>
-       <Toolbar/>
-        <Typography className = {classes.lately}>
-                Lately - Home
-        </Typography>
-      </main>
       </div>
     )
 };

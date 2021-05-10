@@ -21,12 +21,21 @@ const Search = () => {
             alignItems: 'center',
             width: '100%',
             height: '120px',
-            background:'#F3F4F6'
+            background:'#F3F4F6',
+            display:'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          },
+          containter:{
+            width:'30%',
+            display:'flex',
           },
         input: {
             marginLeft: theme.spacing(1),
-            height:'100%',
-            flex: 1,
+            width:'100%',
+            textAlign:'center',
+            fontSize:'2rem',
+            
           },
           iconButton: {
             padding: 10,
@@ -43,14 +52,16 @@ const Search = () => {
         <>
             <Toolbar/>
             <Paper elevation={0} component="form" className={classes.root}>
-            <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                <SearchIcon />
-            </IconButton>
-            <InputBase
-                className={classes.input}
-                placeholder="어떤걸 찾고 계세요?"
-                inputProps={{}}
-            />
+                <div className={classes.containter}>
+                    <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                        <SearchIcon />
+                    </IconButton>
+                    <InputBase
+                        className={classes.input}
+                        placeholder="어떤걸 찾고 계세요?"
+                        inputProps={{}}
+                    />
+                </div>
             </Paper>
         </>
     )
